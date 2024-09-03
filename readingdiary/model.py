@@ -9,3 +9,19 @@ class Note:
 
     def __str__(self) -> str:
         return f"{self.date} - page {self.page}: {self.text}"
+
+
+class Book:
+    EXCELLENT: int = 3
+    GOOD: int = 2
+    BAD: int = 1
+    UNRATED: int = -1
+
+    def __init__(self, isbn: str, title: str, author: str, pages: int):
+        self.isbn: str = isbn
+        self.title: str = title
+        self.author: str = author
+        self.pages: int = pages
+        self.rating: int = Book.UNRATED
+        self.notes: list[Note] = []
+
